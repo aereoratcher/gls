@@ -44,7 +44,7 @@ class Doctrine
 		$metadata_paths 	= array(APPPATH . 'models/Entity');
 
 		// Set $dev_mode to TRUE to disable caching while you develop
-		$dev_mode = false;
+		$dev_mode = true;
 
 		// If you want to use a different metadata driver, change createAnnotationMetadataConfiguration
 		// to createXMLMetadataConfiguration or createYAMLMetadataConfiguration.
