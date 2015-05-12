@@ -8,18 +8,15 @@ class Loader extends CI_Controller {
     }
 
     function index() {
-        $em = $this->doctrine->getEntityManager();
-
-
-        /*$this->load->model('usuarios');
-        $this->usuarios->setNombre('tara');
-
-        $em->persist($this->usuarios);
-        $em->flush();
-
-        echo "creado usuario con id ".$this->usuarios->getId();
-    */
+        $this->load->library('doctrine');
         $this->layout->view('index');
+        $em = $this->doctrine->em;
+
+        $user = new Entity\Usuarios;
+
+        $user->setNombre('Rodrigo');
+        $em->persist($user);
+        $em->flush();
     }
 }
         

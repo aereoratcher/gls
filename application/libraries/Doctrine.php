@@ -1,8 +1,12 @@
 <?php
+define('VENDOR_PATH', APPPATH . '/../vendor/');
+include_once VENDOR_PATH . 'autoload.php';
 
 use Doctrine\Common\ClassLoader,
 	Doctrine\ORM\Tools\Setup,
 	Doctrine\ORM\EntityManager;
+
+
 
 /**
  * Doctrine bootstrap library for CodeIgniter
@@ -34,10 +38,10 @@ class Doctrine
 
 		// With this configuration, your model files need to be in application/models/Entity
 		// e.g. Creating a new Entity\User loads the class from application/models/Entity/User.php
-		$models_namespace = 'Entity';
-		$models_path = APPPATH . 'models';
-		$proxies_dir = APPPATH . 'models/Proxies';
-		$metadata_paths = array(APPPATH . 'models/Entity');
+		$models_namespace 	= 'Entity';
+		$models_path 		= APPPATH . 'models';
+		$proxies_dir 		= APPPATH . 'models/Proxies';
+		$metadata_paths 	= array(APPPATH . 'models/Entity');
 
 		// Set $dev_mode to TRUE to disable caching while you develop
 		$dev_mode = false;
